@@ -3,13 +3,6 @@ class Test
     public static void main(String []args)
     {
 
-        System.out.println( six commit);
-	 System.out.println("sairam branch first commit-commiting same line for mege conflict")
-
-          c drive changes
-
-           d  drive commit
-
-           second user commiting add code lines
+        second commit adding user two
     }
 };
