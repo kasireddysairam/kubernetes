@@ -10,6 +10,6 @@ class Test
 
            d  drive commit
 
-           user 1 commiting first line
+           user 1 commiting first line and user2 adding in same line code lines
     }
 };
