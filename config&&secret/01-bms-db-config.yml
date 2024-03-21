@@ -1,0 +1,13 @@
+---
+apiVersion; v1
+kind: ConfigMap
+metadata:
+  name: bms-db-config-map
+  labels:
+    storage: bms-db-storage
+data:
+  DB_DRIVER_NAME_VALUE:  com.mysql.cj.jdbc.Driver
+  DB_SERVICE_NAME_VALUE: bms-db-server
+  DB_SCHEM_VALUE: bms-app
+  DB_PORT_VALUE: "3306"
+  

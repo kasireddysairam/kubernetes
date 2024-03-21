@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bms-app-db-deployment
+  labeles:
+    app: bms-app-db
+spec:
+  template:
+    metadata:
+      labels:
+        app: bms-app-db-pod
+    spec:
+     volumes:
+      - name: bms-app-db-volume
+        persistentvloumeClaim:
+    containers:
+     - name: bms-app-db
+       image:mysql
+       ports:
+        - containerport: 3303
+       volumeMounts:
+        - name: bms-app-db-volume
+          mountpath: /opt/mysql
+      env:
+       - name: MYSQL_ROOT_PASSWORD
+         valueFrom:
+           secretKetRef:
+             name:bms-db-config-secret
+             key: DB_PASSWORD_VALUE
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name:bms-db-config-map
+              key: DB_SCHEMA-VALUE
+selector:
+  matchlables:
+    app: bms-app-db-pod
+replicas: 1 

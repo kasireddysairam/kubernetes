@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+ name: bms-db-pv
+ labels: 
+  name: bms-db-pv
+spec:
+  capacity: 
+   storage: 4Gi
+  accessModes: 
+   - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  hostPath: 
+    path: /opt/mysql
