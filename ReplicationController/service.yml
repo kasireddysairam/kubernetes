@@ -1,0 +1,14 @@
+ ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: javawebappliveservice
+spec:
+  type: NodePort  #LoadBalancer # ClusterIp
+  selector:
+    app: javawebapp
+  ports:
+  - port: 80
+    targetPort: 8080
+    nodePort: 32727
+...
